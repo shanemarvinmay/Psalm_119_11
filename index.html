@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psalm 119:11</title>
+    <style>
+        textarea {
+            width: 66vw;
+            height: 66vh;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="textarea"></textarea><br>
+
+    <input type="radio" id="easy" name="difficulty" onchange="getVerse()" value="easy" checked="checked">
+    <label for="difficulty">easy</label><br>
+    <input type="radio" id="medium" name="difficulty" onchange="getVerse()" value="medium">
+    <label for="medium">medium</label><br>
+    <input type="radio" id="hard" name="difficulty" onchange="getVerse()" value="hard">
+    <label for="hard">hard</label><br>
+
+    <button id="checkBtn">Check!</button>
+
+    <script>
+        const textarea = document.querySelector('#textarea');
+        const checkBtn = document.querySelector('#checkBtn');
+        let verse = `My dear brothers and sisters, how can you claim to have faith in our glorious Lord Jesus Christ if you favor some people over others? For example, suppose someone comes into your meeting dressed in fancy clothes and expensive jewelry, and another comes in who is poor and dressed in dirty clothes. If you give special attention and a good seat to the rich person, but you say to the poor one, “You can stand over there, or else sit on the floor”—well, doesn’t this discrimination show that your judgments are guided by evil motives?`;
+        // TODO: trigger this function any time the difficulty radio btn changes
+        const getDifficulty = () => {
+            const difficulty = document.getElementsByName('difficulty');
+            for (let i = 0; i < difficulty.length; i++) {
+                if (difficulty[i].checked)
+                    return difficulty[i].value
+            }
+            return 'easy';
+        }
+
+        const getVerse = () => {
+            const difficulty = getDifficulty();
+            let ratioWordsShown = 0;
+            let words = verse.split(" ");
+            let verseShown = '';
+            if (difficulty == 'easy') {
+                ratioWordsShown = 5;
+            }
+            // TODO: add the other difficutlies
+            for (let i = 0; i < words.length; i++) {
+                if (i % ratioWordsShown == 0) {
+                    for (let j = 0; j < words[i].length; j++) {
+                        verseShown += '-';
+                    }
+                } else {
+                    verseShown += words[i];
+                }
+                verseShown += ' ';
+            }
+            textarea.value = verseShown.slice(0, -1);
+            return verseShown.slice(0, -1);
+        }
+
+        const checkInput = () => {
+            // TODO: show user if they are right, or what they missed
+            console.log(textarea.value == verse);
+            alert(textarea.value == verse);
+            return textarea.value == verse;
+        }
+
+        checkBtn.onclick = checkInput;
+        getVerse();
+    </script>
+</body>
+
+</html>

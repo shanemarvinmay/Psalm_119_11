@@ -1,0 +1,27 @@
+{
+  "name": "psalm_119_11",
+  "version": "1.0.0",
+  "description": "change me",
+  "main": "index.js",
+  "scripts": {
+    "test": "change me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanemarvinmay/Psalm_119_11.git"
+  },
+  "keywords": [
+    "change",
+    "me"
+  ],
+  "author": "shanemarvinmay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shanemarvinmay/Psalm_119_11/issues"
+  },
+  "homepage": "https://github.com/shanemarvinmay/Psalm_119_11#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security"
+  }
+}
