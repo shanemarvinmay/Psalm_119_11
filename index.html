@@ -60,7 +60,7 @@
             for (let i = 0; i < words.length; i++) {
                 if (i % ratioWordsShown == 0) {
                     for (let j = 0; j < words[i].length; j++) {
-                        verseShown += '-';
+                        verseShown += '_';
                     }
                 } else {
                     verseShown += words[i];
@@ -76,8 +76,29 @@
             console.log(textarea.value == verse);
             alert(textarea.value == verse);
             if (textarea.value != verse) {
-                let result = '';
-                // taking care of diff in length between verse and input
+                let output = '';
+                let input  = textarea.value.split(' ');
+                let answer = verse.split(' ');
+                let i = 0;
+                while (i < Math.min(input.length,answer.length)) {
+                    if (input[i] != answer[i]) {
+                        output += answer[i].toUpperCase() + ' ';
+                    }
+                    else {
+                        output += input[i] + ' ';
+                    }
+                    i += 1;
+                }
+                // incase the length of input and the verse are different
+                while (i < answer.length) {
+                    output += answer[i].toUpperCase() + ' ';
+                    i += 1;
+                }
+                if (i < input.length) {
+                    output += 'THIS IS NOT NEEDED: ' + input.slice(i) + ' ';
+                }
+                output = output.slice(0, -1);
+                textarea.value = output;
             }
             return textarea.value == verse;
         }
