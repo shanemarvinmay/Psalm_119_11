@@ -23,6 +23,8 @@
     <label for="medium">medium</label><br>
     <input type="radio" id="hard" name="difficulty" onchange="getVerse()" value="hard">
     <label for="hard">hard</label><br>
+    <input type="radio" id="extreme" name="difficulty" onchange="getVerse()" value="extreme">
+    <label for="extreme">extreme</label><br>
 
     <button id="checkBtn">Check!</button>
 
@@ -30,7 +32,7 @@
         const textarea = document.querySelector('#textarea');
         const checkBtn = document.querySelector('#checkBtn');
         let verse = `My dear brothers and sisters, how can you claim to have faith in our glorious Lord Jesus Christ if you favor some people over others? For example, suppose someone comes into your meeting dressed in fancy clothes and expensive jewelry, and another comes in who is poor and dressed in dirty clothes. If you give special attention and a good seat to the rich person, but you say to the poor one, “You can stand over there, or else sit on the floor”—well, doesn’t this discrimination show that your judgments are guided by evil motives?`;
-        
+
         const getDifficulty = () => {
             const difficulty = document.getElementsByName('difficulty');
             for (let i = 0; i < difficulty.length; i++) {
@@ -55,7 +57,7 @@
                 ratioWordsShown = 2;
             } 
             else {
-                ratioWordsShown = 0;
+                ratioWordsShown = 1;
             }
             // TODO: add the other difficutlies
             for (let i = 0; i < words.length; i++) {
