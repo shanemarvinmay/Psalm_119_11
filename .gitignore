@@ -105,3 +105,4 @@ dist
 
 # to stop my key from being used
 key.txt
+data/
