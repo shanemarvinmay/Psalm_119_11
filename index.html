@@ -47,6 +47,15 @@
             if (difficulty == 'easy') {
                 ratioWordsShown = 5;
             }
+            else if (difficulty == 'medium') {
+                ratioWordsShown = 3;
+            } 
+            else if (difficulty == 'hard') {
+                ratioWordsShown = 2;
+            } 
+            else {
+                ratioWordsShown = 0;
+            }
             // TODO: add the other difficutlies
             for (let i = 0; i < words.length; i++) {
                 if (i % ratioWordsShown == 0) {
@@ -66,6 +75,10 @@
             // TODO: show user if they are right, or what they missed
             console.log(textarea.value == verse);
             alert(textarea.value == verse);
+            if (textarea.value != verse) {
+                let result = '';
+                // taking care of diff in length between verse and input
+            }
             return textarea.value == verse;
         }
 
