@@ -106,3 +106,6 @@ dist
 # to stop my key from being used
 key.txt
 data/
+
+# No need to keep track of these
+.DS_Store

@@ -18,6 +18,7 @@
             width: 66vw;
             height: 66vh;
         }
+
         /* #success_alert {
             display: none;
         }
@@ -28,17 +29,39 @@
 </head>
 
 <body>
+    <div class="jumbotron card card-image"
+        style="background-image: url('imgs/little_plant.jpg'); background-size: cover;     
+        background-repeat: no-repeat;
+        background-position: center center;">
+        <!-- https://mdbootstrap.com/img/Photos/Others/gradient1.jpg  -->
+        <div class="text-white text-center py-5 px-4">
+            <div>
+                <h2 class="card-title h1-responsive pt-3 mb-5 font-bold">
+                    <strong>Plant the Word of God in your heart.</strong></h2>
+                <p class="mx-5 mb-5">
+                    I have hidden your word in my heart,
+                    that I might not sin against you. Psalm 119: 11 NLT. 
+                </p>
+                <!-- <p>
+                    So use this to help you memorize the Word and plant it
+                    in your heart.
+                </p> -->
+                <!-- <a class="btn btn-outline-white btn-md"><i class="fas fa-clone left"></i> View project</a> -->
+            </div>
+        </div>
+    </div>
+
     <p>James Ch 2: 1-4 NLT</p>
     <div id="success_alert" class="alert alert-success" role="alert" style="display: none;">
-        Nice job! Plant the Word deep in your mind and heart. 
-        <button type="button" class="btn btn-outline-primary waves-effect btn-rounded" 
-        onclick="showAlert('success_alert'); getVerse();">Keep Going!</button>
-      </div>
-      <div id="fail_alert" class="alert alert-danger" role="alert" style="display: none;">
+        Nice job! Plant the Word deep in your mind and heart.
+        <button type="button" class="btn btn-outline-primary waves-effect btn-rounded"
+            onclick="showAlert('success_alert'); getVerse();">Keep Going!</button>
+    </div>
+    <div id="fail_alert" class="alert alert-danger" role="alert" style="display: none;">
         What you have written is not the Word of God. Study hard and try again! Never quit!
-        <button type="button" class="btn btn-outline-primary waves-effect btn-rounded" 
-        onclick="showAlert('fail_alert');getVerse();">Try Again!</button>
-      </div>
+        <button type="button" class="btn btn-outline-primary waves-effect btn-rounded"
+            onclick="showAlert('fail_alert');getVerse();">Try Again!</button>
+    </div>
     <textarea id="textarea"></textarea><br>
 
     <input type="radio" id="easy" name="difficulty" onchange="getVerse()" value="easy" checked="checked">
