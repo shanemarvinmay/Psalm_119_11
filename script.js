@@ -45,14 +45,13 @@ const getVerse = () => {
 
 const checkInput = () => {
     // TODO: show user if they are right, or what they missed
-    console.log(textarea.value == verse);
     if (textarea.value == verse) {
         showAlert('success_alert');
-        setTimeout(() => showAlert('success_alert'), 5000);
+        // setTimeout(() => showAlert('success_alert'), 5000);
     } 
     else {
         showAlert('fail_alert');
-        setTimeout(() => showAlert('fail_alert'), 5000);
+        // setTimeout(() => showAlert('fail_alert'), 5000);
     }
     if (textarea.value != verse) {
         let output = '';
@@ -83,12 +82,19 @@ const checkInput = () => {
 }
 
 const showAlert = (typeOfAlert) => {
-    console.log(typeOfAlert + '\t' + document.querySelector(`#${typeOfAlert}`).style.display);
+    // console.log(typeOfAlert + '\t' + document.querySelector(`#${typeOfAlert}`).style.display);
     if (document.querySelector(`#${typeOfAlert}`).style.display == 'none') {
         document.querySelector(`#${typeOfAlert}`).style.display = 'block';
     }
     else {
         document.querySelector(`#${typeOfAlert}`).style.display = 'none';
+    }
+    // making sure only the 'typeOfAlert' is possibly shown
+    const alerts = document.querySelectorAll(".alert");
+    for(let i = 0; i < alerts.length; i++) {
+        if (alerts[i].style.display == 'block' && alerts[i].id != typeOfAlert) {
+            alerts[i].style.display = 'none';
+        }
     }
 };
 

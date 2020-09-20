@@ -30,10 +30,14 @@
 <body>
     <p>James Ch 2: 1-4 NLT</p>
     <div id="success_alert" class="alert alert-success" role="alert" style="display: none;">
-        Nice job! Plant the Word deep in your mind and heart.
+        Nice job! Plant the Word deep in your mind and heart. 
+        <button type="button" class="btn btn-outline-primary waves-effect btn-rounded" 
+        onclick="showAlert('success_alert'); getVerse();">Keep Going!</button>
       </div>
       <div id="fail_alert" class="alert alert-danger" role="alert" style="display: none;">
         What you have written is not the Word of God. Study hard and try again! Never quit!
+        <button type="button" class="btn btn-outline-primary waves-effect btn-rounded" 
+        onclick="showAlert('fail_alert');getVerse();">Try Again!</button>
       </div>
     <textarea id="textarea"></textarea><br>
 
