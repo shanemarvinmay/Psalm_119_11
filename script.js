@@ -8,7 +8,7 @@ const getDifficulty = () => {
         if (difficulty[i].checked)
             return difficulty[i].value
     }
-    return 'easy';
+    return 'none';
 }
 
 const getVerse = () => {
@@ -16,7 +16,10 @@ const getVerse = () => {
     let ratioWordsShown = 0;
     let words = verse.split(" ");
     let verseShown = '';
-    if (difficulty == 'easy') {
+    if (difficulty == 'none') {
+        ratioWordsShown = 0;
+    }
+    else if (difficulty == 'easy') {
         ratioWordsShown = 5;
     }
     else if (difficulty == 'medium') {

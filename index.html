@@ -50,7 +50,9 @@
         </div>
     </div>
 
-    <p>James Ch 2: 1-4 NLT</p>
+    <!-- <p>James Ch 2: 1-4 NLT</p> -->
+
+    <!-- alerts  -->
     <div id="success_alert" class="alert alert-success" role="alert" style="display: none;">
         Nice job! Plant the Word deep in your mind and heart.
         <button type="button" class="btn btn-outline-primary waves-effect btn-rounded"
@@ -61,28 +63,66 @@
         <button type="button" class="btn btn-outline-primary waves-effect btn-rounded"
             onclick="showAlert('fail_alert');getVerse();">Try Again!</button>
     </div>
-    <textarea id="textarea"></textarea><br>
 
-    <input type="radio" id="easy" name="difficulty" onchange="getVerse()" value="easy" checked="checked">
-    <label for="difficulty">easy</label><br>
-    <input type="radio" id="medium" name="difficulty" onchange="getVerse()" value="medium">
-    <label for="medium">medium</label><br>
-    <input type="radio" id="hard" name="difficulty" onchange="getVerse()" value="hard">
-    <label for="hard">hard</label><br>
-    <input type="radio" id="extreme" name="difficulty" onchange="getVerse()" value="extreme">
-    <label for="extreme">extreme</label><br>
+    <!-- textarea  -->
+    <div class="form-group shadow-textarea">
+        <!-- <label for="textarea">James Ch 2: 1-4 NLT</label> -->
+        <textarea class="form-control z-depth-1" id="textarea" rows="5"
+            placeholder="Verse should be here..."></textarea>
+    </div>
 
-    <button id="checkBtn">Check!</button>
+    <!-- controlls  -->
+    <div class="text-center">
 
+        <!-- Material inline easy -->
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="none" name="difficulty" value="none" onchange="getVerse()"
+                checked>
+            <label class="form-check-label" for="none">none</label>
+        </div>
+
+        <!-- Material inline easy -->
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="easy" name="difficulty" value="easy" onchange="getVerse()">
+            <label class="form-check-label" for="easy">easy</label>
+        </div>
+
+        <!-- Material inline medium -->
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="medium" name="difficulty" value="medium"
+                onchange="getVerse()">
+            <label class="form-check-label" for="medium">medium</label>
+        </div>
+
+        <!-- Material inline hard -->
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="hard" name="difficulty" value="hard" onchange="getVerse()">
+            <label class="form-check-label" for="hard">hard</label>
+        </div>
+
+        <!-- Material inline extreme -->
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="extreme" name="difficulty" value="extreme"
+                onchange="getVerse()">
+            <label class="form-check-label" for="extreme">extreme</label>
+        </div>
+
+    </div>
+
+    <div class="text-center">
+
+        <button id="checkBtn" type="button" class="btn btn-outline-primary waves-effect">Check!</button>
+
+    </div>
     <!-- Footer -->
     <footer class="page-footer font-small blue pt-4">
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">
             <a href="https://mdbootstrap.com/">
-                Scripture quotations marked NLT are taken from the Holy Bible, New Living Translation,<br> 
+                Scripture quotations marked NLT are taken from the Holy Bible, New Living Translation,<br>
                 copyright 1996, 2004, 2007, 2015 by Tyndale House Foundation.<br>
                 Used by permission of Tyndale House Publishers, Inc.,<br>
-                 Carol Stream, Illinois 60188. All rights reserved.</a>
+                Carol Stream, Illinois 60188. All rights reserved.</a>
         </div>
         <!-- Copyright -->
     </footer>
