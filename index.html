@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Psalm 119:11</title>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> -->
     <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"> -->
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
@@ -63,6 +63,33 @@
         <button type="button" class="btn btn-outline-primary waves-effect btn-rounded"
             onclick="showAlert('fail_alert');getVerse();">Try Again!</button>
     </div>
+
+    <!-- scripture select  -->
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+    <form autocomplete="off">
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="myInput">Book</label>
+                <input type="text" class="form-control" id="myInput" placeholder="Book" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="chapterInput">Chapter</label>
+                <input type="text" class="form-control" id="chapterInput" placeholder="Chapter"
+                    required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+    <div class="col"></div>
+</div>
 
     <!-- textarea  -->
     <div class="form-group shadow-textarea">
@@ -127,8 +154,9 @@
         <!-- Copyright -->
     </footer>
     <!-- Footer -->
-
+    <script src="nlt.js"></script>
     <script src="script.js"></script>
+    <script src="scripture_select.js"></script>
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
@@ -140,6 +168,6 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-</body>
 
+</body>
 </html>
