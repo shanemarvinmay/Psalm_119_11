@@ -48,7 +48,7 @@ const getVerse = () => {
 
 const checkInput = () => {
     // TODO: show user if they are right, or what they missed
-    if (textarea.value == verse) {
+    if (textarea.value.toUpperCase() == verse.toUpperCase()) {
         showAlert('success_alert');
         // setTimeout(() => showAlert('success_alert'), 5000);
     } 
@@ -62,7 +62,7 @@ const checkInput = () => {
         let answer = verse.split(' ');
         let i = 0;
         while (i < Math.min(input.length, answer.length)) {
-            if (input[i] != answer[i]) {
+            if (input[i].toUpperCase() != answer[i].toUpperCase()) {
                 output += answer[i].toUpperCase() + ' ';
             }
             else {
