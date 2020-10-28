@@ -33,7 +33,7 @@ const getVerse = () => {
     }
     // TODO: add the other difficutlies
     for (let i = 0; i < words.length; i++) {
-        if (i % ratioWordsShown == 0) {
+        if (i % ratioWordsShown == 0 && Number(words[i]) != NaN && Number(words[i]) != 0) {
             for (let j = 0; j < words[i].length; j++) {
                 verseShown += '_';
             }
