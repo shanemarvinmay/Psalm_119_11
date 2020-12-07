@@ -31,9 +31,10 @@ const getVerse = () => {
     else {
         ratioWordsShown = 1;
     }
-    // TODO: add the other difficutlies
+    
     for (let i = 0; i < words.length; i++) {
-        if (i % ratioWordsShown == 0 && Number(words[i]) == NaN && Number(words[i]) == 0) {
+        console.log(`isZero: ${i % ratioWordsShown} \t number: ${Number(words[i])} `);
+        if (i % ratioWordsShown == 0 && (Number(words[i]) == NaN || Number(words[i]) == 0)) {
             for (let j = 0; j < words[i].length; j++) {
                 verseShown += '_';
             }
@@ -85,7 +86,7 @@ const checkInput = () => {
 }
 
 const showAlert = (typeOfAlert) => {
-    // console.log(typeOfAlert + '\t' + document.querySelector(`#${typeOfAlert}`).style.display);
+    
     if (document.querySelector(`#${typeOfAlert}`).style.display == 'none') {
         document.querySelector(`#${typeOfAlert}`).style.display = 'block';
     }
