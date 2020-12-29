@@ -49,16 +49,16 @@
             return s.split(" ");
         }
         const checkInput = () => {
-            answer = stringToArray(answer);
-            input = stringToArray(input);
+            let verse = stringToArray(answer);
+            let blasphemy = stringToArray(input);
             diff = '';
-            for(let i = 0; i < answer.length && i < input.length; i++) {
-                if (answer[i] != input[i]) {
-                    diff += answer[i];
+            for(let i = 0; i < verse.length && i < blasphemy.length; i++) {
+                if (verse[i] != blasphemy[i]) {
+                    diff += verse[i];
                 }
             }
             console.log(`${diff.length}`);
-            return diff.length < 1 && answer.length != input.length;
+            return diff.length < 1 && verse.length != blasphemy.length;
         };
         // set up
         switchTabs(TABS.ANSWER);
