@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psalm 119:11</title>
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"> -->
+    <!-- Google Fonts -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"> -->
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <style>
+        textarea {
+            width: 66vw;
+            height: 33vh;
+        }
+
+        /* #success_alert {
+            display: none;
+        }
+        #fail_alert {
+            display: none;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron card card-image" style="background-image: url('imgs/little_plant.jpg'); background-size: cover;     
+        background-repeat: no-repeat;
+        background-position: center center;">
+        <!-- https://mdbootstrap.com/img/Photos/Others/gradient1.jpg  -->
+        <div class="text-white text-center py-5 px-4">
+            <div>
+                <h2 class="card-title h1-responsive pt-3 mb-5 font-bold">
+                    <strong>Plant the Word of God in your heart.</strong></h2>
+                <p class="mx-5 mb-5">
+                    I have hidden your word in my heart,
+                    that I might not sin against you. Psalm 119: 11 NLT.
+                </p>
+                <!-- <p>
+                    So use this to help you memorize the Word and plant it
+                    in your heart.
+                </p> -->
+                <!-- <a class="btn btn-outline-white btn-md"><i class="fas fa-clone left"></i> View project</a> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- <p>James Ch 2: 1-4 NLT</p> -->
+
+    <!-- alerts  -->
+    <div id="success_alert" class="alert alert-success" role="alert" style="display: none;">
+        Nice job! Plant the Word deep in your mind and heart.
+        <button type="button" class="btn btn-outline-primary waves-effect btn-rounded"
+            onclick="showAlert('success_alert'); getVerse();">Keep Going!</button>
+    </div>
+    <div id="fail_alert" class="alert alert-danger" role="alert" style="display: none;">
+        What you have written is not the Word of God. Study hard and try again! Never quit!
+        <button type="button" class="btn btn-outline-primary waves-effect btn-rounded"
+            onclick="showAlert('fail_alert');getVerse();">Try Again!</button>
+    </div>
+
+    <!-- scripture select  -->
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <form autocomplete="off">
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="myInput">Book</label>
+                        <input type="text" class="form-control" id="myInput" placeholder="Book" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="chapterInput">Chapter</label>
+                        <input type="text" class="form-control" id="chapterInput" placeholder="Chapter" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+
+    <!-- textarea  -->
+    <div class="form-group shadow-textarea">
+        <!-- <label for="textarea">James Ch 2: 1-4 NLT</label> -->
+        <textarea class="form-control z-depth-1" id="textarea" rows="5"
+            placeholder="Verse should be here..."></textarea>
+    </div>
+
+    <!-- controlls  -->
+    <div class="text-center">
+
+        <!-- Material inline easy -->
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="none" name="difficulty" value="none" onchange="getVerse()"
+                checked>
+            <label class="form-check-label" for="none">none</label>
+        </div>
+
+        <!-- Material inline easy -->
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="easy" name="difficulty" value="easy" onchange="getVerse()">
+            <label class="form-check-label" for="easy">easy</label>
+        </div>
+
+        <!-- Material inline medium -->
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="medium" name="difficulty" value="medium"
+                onchange="getVerse()">
+            <label class="form-check-label" for="medium">medium</label>
+        </div>
+
+        <!-- Material inline hard -->
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="hard" name="difficulty" value="hard" onchange="getVerse()">
+            <label class="form-check-label" for="hard">hard</label>
+        </div>
+
+        <!-- Material inline extreme -->
+        <div class="form-check form-check-inline">
+            <input type="radio" class="form-check-input" id="extreme" name="difficulty" value="extreme"
+                onchange="getVerse()">
+            <label class="form-check-label" for="extreme">extreme</label>
+        </div>
+
+    </div>
+
+    <div class="text-center">
+
+        <button id="checkBtn" type="button" class="btn btn-outline-primary waves-effect">Check!</button>
+
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue pt-4">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            <a href="https://mdbootstrap.com/">
+                Scripture quotations marked NLT are taken from the Holy Bible, New Living Translation,<br>
+                copyright 1996, 2004, 2007, 2015 by Tyndale House Foundation.<br>
+                Used by permission of Tyndale House Publishers, Inc.,<br>
+                Carol Stream, Illinois 60188. All rights reserved.</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script src="nlt.js"></script>
+    <script src="script.js"></script>
+    <script src="scripture_select.js"></script>
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+
+</body>
+
+</html>
